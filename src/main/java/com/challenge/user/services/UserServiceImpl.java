@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static com.challenge.user.utils.MailUtils.isValidEmail;
 import static com.challenge.user.utils.PasswordUtils.isValidPassword;
@@ -89,17 +90,18 @@ public class UserServiceImpl implements UserService {
         // =============== Create Records =============
 
         //save user
-        UserEntity newUser = new UserEntity();
-        newUser.setName(request.getName());
-        newUser.setPassword(request.getPassword());
-        newUser.setEmail(request.getEmail());
-        newUser.setCreatedAt(currentDateTime);
-        newUser.setUpdatedAt(currentDateTime);
-        newUser.setIsActive(true);
-        newUser.setLastLogin(currentDateTime);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setId(); //UUID auto default random string value
+        userEntity.setName(request.getName());
+        userEntity.setPassword(request.getPassword());
+        userEntity.setEmail(request.getEmail());
+        userEntity.setCreatedAt(currentDateTime);
+        userEntity.setUpdatedAt(currentDateTime);
+        userEntity.setIsActive(true);
+        userEntity.setLastLogin(currentDateTime);
 
-        User userResult = User.entityToUser(getUserRepository().save(newUser));
-        Long userId = userResult.getId();
+        User userResult = User.entityToUser(getUserRepository().save(userEntity));
+        UUID userId = userResult.getId();
 
         //save phones from list
         List<Phone> phones = request.getPhones();

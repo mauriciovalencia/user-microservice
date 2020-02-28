@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -16,13 +18,15 @@ import lombok.*;
 public class UserResponse {
 
     @JsonProperty
-    private Long id;
+    private UUID id;
     @JsonProperty
     private String name;
-    @JsonProperty
+    @JsonProperty("last_login")
     private String lastLogin;
     @JsonProperty
     private String token;
+    @JsonProperty("is_active")
+    private Boolean isActive;
     @JsonProperty
     private Timestamps timestamps;
 

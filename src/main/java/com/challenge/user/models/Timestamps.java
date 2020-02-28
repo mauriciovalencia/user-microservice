@@ -17,9 +17,9 @@ import java.time.format.DateTimeFormatter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Timestamps {
 
-    @JsonProperty
+    @JsonProperty("created_at")
     private LocalDateTime createdAt;
-    @JsonProperty
+    @JsonProperty("updated_at")
     private LocalDateTime updatedAt;
 
     public String getCreatedAt() { return createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME); }

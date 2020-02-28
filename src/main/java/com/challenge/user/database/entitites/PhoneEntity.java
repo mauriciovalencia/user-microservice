@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "phone")
@@ -17,7 +18,7 @@ public class PhoneEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
+    private UUID userId;
     private String citycode;
     private String contrycode;
     private String number;

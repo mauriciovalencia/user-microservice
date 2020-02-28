@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,15 +17,17 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
 
-    private Long id;
+    private UUID id;
     private String email;
     private String name;
     private String password;
     private List<Phone> phones;
-    private Timestamps timestamps;
     private String user;
     private String pwd;
     private String token;
+    private Boolean isActive;
+    private Timestamps timestamps;
+
 
     public static User entityToUser(UserEntity ue){
         User u = new User();
@@ -32,6 +35,7 @@ public class User {
         u.setEmail(ue.getEmail());
         u.setName(ue.getName());
         u.setPassword(ue.getPassword());
+        u.setIsActive(ue.getIsActive());
         Timestamps ts = new Timestamps();
         ts.setCreatedAt(ue.getCreatedAt());
         ts.setUpdatedAt(ue.getUpdatedAt());
