@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "user")
@@ -15,8 +16,9 @@ public class UserEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    @Column( columnDefinition = "uuid", updatable = false )
+    private UUID id;
     private String email;
     private String name;
     private String password;
@@ -25,6 +27,11 @@ public class UserEntity implements Serializable {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
+    private UUID uuid = UUID.randomUUID();
+    public void setId() {
+        this.id = UUID.randomUUID();
+    }
 
     @Override
     public String toString() {

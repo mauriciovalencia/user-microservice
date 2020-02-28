@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -15,7 +17,7 @@ import lombok.*;
 public class Phone {
 
     private Long id;
-    private Long userId;
+    private UUID userId;
     private String citycode;
     private String countrycode;
     private String number;
