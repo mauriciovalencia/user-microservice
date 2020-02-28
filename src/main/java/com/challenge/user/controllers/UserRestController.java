@@ -81,8 +81,9 @@ public class UserRestController {
             userResponse.setId(user.getId());
             userResponse.setLastLogin(user.getTimestamps().getCreatedAt());
             userResponse.setName(user.getName());
+            userResponse.setToken("7jAqdUPWuM66XYqBjq0K");
+            userResponse.setIsActive(user.getIsActive());
             userResponse.setTimestamps(user.getTimestamps());
-            userResponse.setToken("sasdsadad");
             return new ResponseEntity<>(userResponse, HttpStatus.OK);
 
         }catch(EmptyParamException ep) {
