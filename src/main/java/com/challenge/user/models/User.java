@@ -21,10 +21,11 @@ public class User {
     private String name;
     private String password;
     private List<Phone> phones;
-    private Timestamps timestamps;
     private String user;
     private String pwd;
     private String token;
+    private Boolean isActive;
+    private Timestamps timestamps;
 
     public static User entityToUser(UserEntity ue){
         User u = new User();
@@ -32,6 +33,7 @@ public class User {
         u.setEmail(ue.getEmail());
         u.setName(ue.getName());
         u.setPassword(ue.getPassword());
+        u.setIsActive(ue.getIsActive());
         Timestamps ts = new Timestamps();
         ts.setCreatedAt(ue.getCreatedAt());
         ts.setUpdatedAt(ue.getUpdatedAt());
