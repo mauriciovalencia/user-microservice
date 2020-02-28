@@ -19,10 +19,12 @@ public class UserResponse {
     private Long id;
     @JsonProperty
     private String name;
-    @JsonProperty
+    @JsonProperty("last_login")
     private String lastLogin;
     @JsonProperty
     private String token;
+    @JsonProperty("is_active")
+    private Boolean isActive;
     @JsonProperty
     private Timestamps timestamps;
 
