@@ -1,4 +1,4 @@
-package com.challenge.user.unit;
+package com.challenge.user;
 
 import com.challenge.user.utils.MailUtils;
 import com.challenge.user.utils.PasswordUtils;
@@ -20,23 +20,23 @@ public class UtilsTests {
     private Logger log = LoggerFactory.getLogger(UtilsTests.class);
 
     @Test
-    public void test_email(){
+    public void test_email() {
 
         log.info("test_email");
         {
             Assert.assertEquals("should be true with 'mail@mail.com' param", MailUtils.isValidEmail("mail@mail.com"), true);
         }
         {
-            Assert.assertEquals("should be false with null param",MailUtils.isValidEmail(null), false);
+            Assert.assertEquals("should be false with null param", MailUtils.isValidEmail(null), false);
         }
         {
-            Assert.assertEquals("should be false with '' param",MailUtils.isValidEmail(""), false);
+            Assert.assertEquals("should be false with '' param", MailUtils.isValidEmail(""), false);
         }
         {
-            Assert.assertEquals("should be false with ' ' param",MailUtils.isValidEmail(" "), false);
+            Assert.assertEquals("should be false with ' ' param", MailUtils.isValidEmail(" "), false);
         }
         {
-            Assert.assertEquals("should be false with '@' param",MailUtils.isValidEmail("@"), false);
+            Assert.assertEquals("should be false with '@' param", MailUtils.isValidEmail("@"), false);
         }
         {
             Assert.assertEquals("should be false with '@.com' param", MailUtils.isValidEmail("@.com"), false);
@@ -48,32 +48,32 @@ public class UtilsTests {
     }
 
     @Test
-    public void test_password(){
+    public void test_password() {
 
         log.info("test_password");
         {
-            Assert.assertEquals("should be true with 'Agent07' param", PasswordUtils.isValidPassword("Agent07"),true);
+            Assert.assertEquals("should be true with 'Agent07' param", PasswordUtils.isValidPassword("Agent07"), true);
         }
         {
-            Assert.assertEquals("should be true with 'AZazaz00' param", PasswordUtils.isValidPassword("AZazaz00"),true);
+            Assert.assertEquals("should be true with 'AZazaz00' param", PasswordUtils.isValidPassword("AZazaz00"), true);
         }
         {
-            Assert.assertEquals("should be false with 'hunter2' param", PasswordUtils.isValidPassword("hunter2"),false);
+            Assert.assertEquals("should be false with 'hunter2' param", PasswordUtils.isValidPassword("hunter2"), false);
         }
         {
-            Assert.assertEquals("should be false with null param", PasswordUtils.isValidPassword(null),false);
+            Assert.assertEquals("should be false with null param", PasswordUtils.isValidPassword(null), false);
         }
         {
-            Assert.assertEquals("should be false with '' param", PasswordUtils.isValidPassword(""),false);
+            Assert.assertEquals("should be false with '' param", PasswordUtils.isValidPassword(""), false);
         }
         {
-            Assert.assertEquals("should be false with ' ' param", PasswordUtils.isValidPassword(" "),false);
+            Assert.assertEquals("should be false with ' ' param", PasswordUtils.isValidPassword(" "), false);
         }
         log.info("test_password end");
     }
 
     @Test
-    public void test_token(){
+    public void test_token() {
 
         log.info("test_token");
         String text_for_token = "is_a_test";
@@ -84,21 +84,21 @@ public class UtilsTests {
         {
             Integer tokenLength = PasswordUtils.setTokenableString(text_for_token).length();
             Assert.assertEquals(
-                    "should be true with "+text_for_token_length+" and "+text_for_token+" param",
+                    "should be true with " + text_for_token_length + " and " + text_for_token + " param",
                     tokenLength,
                     text_for_token_length);
         }
         {
             Integer tokenLength = PasswordUtils.setJWTToken(PasswordUtils.setTokenableString(text_for_token)).length();
             Assert.assertEquals(
-                    "should be true with "+token_length+" and tokenized "+text_for_token+" param",
+                    "should be true with " + token_length + " and tokenized " + text_for_token + " param",
                     tokenLength,
                     token_length);
         }
         {
             Integer tokenLength = PasswordUtils.setJWTToken(null).length();
             Assert.assertEquals(
-                    "should be true with "+token_lenght_when_is_null+" and tokenized "+text_for_token+" param",
+                    "should be true with " + token_lenght_when_is_null + " and tokenized " + text_for_token + " param",
                     tokenLength,
                     token_lenght_when_is_null);
         }

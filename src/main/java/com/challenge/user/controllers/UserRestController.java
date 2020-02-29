@@ -29,9 +29,8 @@ public class UserRestController {
     private UserService userService;
 
     @Autowired
-    public void setUserService (UserService userService){
-        this.userService = userService;
-    }
+    private void setUserService(UserService userService) { this.userService = userService; }
+
 
 
     @PostMapping("users")
