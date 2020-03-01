@@ -52,15 +52,15 @@ public class UserRestController {
         }catch(EmptyParamException ep) {
             log.error(ep.getLocalizedMessage(), ep);
             return new ResponseEntity<>(new ErrorMessage(ep.getCode(),
-                    ep.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+                    ep.getMessage()), HttpStatus.NOT_FOUND);
         }catch (ExistParamException ep) {
             log.error(ep.getLocalizedMessage(), ep);
             return new ResponseEntity<>(new ErrorMessage(ep.getCode(), ep.getMessage()),
-                    HttpStatus.INTERNAL_SERVER_ERROR);
+                    HttpStatus.NOT_FOUND);
         }catch(InvalidParamException ip) {
             log.error(ip.getLocalizedMessage(), ip);
             return new ResponseEntity<>(new ErrorMessage(ip.getCode(), ip.getMessage()),
-                    HttpStatus.INTERNAL_SERVER_ERROR);
+                    HttpStatus.NOT_FOUND);
         } catch(Exception e){
             log.error(e.getLocalizedMessage(), e);
             return new ResponseEntity<>(new ErrorMessage(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage()),
