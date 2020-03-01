@@ -1,5 +1,5 @@
 # User-Microservice
-Backend app for get multiples for a limit number and conditioned to custom multiples.
+Backend app create user with jwt token creation.
 
 # Use
 Download or clone this project, then through IntelliJ IDEA or another IDE, open the project, or just for execute CLI commands.
