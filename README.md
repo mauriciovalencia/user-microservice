@@ -76,6 +76,14 @@ Response Error: After retry create user
 
 # Deploy
 
+```
+docker build -f Dockerfile -t usermsa .
+docker-compose up -d --force-recreate
+```
+or
+```
+docker-compose up -d --build --force-recreate
+```
 
 # Architecture or diagram
 
