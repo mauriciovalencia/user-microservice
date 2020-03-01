@@ -1,9 +1,9 @@
 package com.challenge.user;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 class UserApplicationTests {
 
     @Test
