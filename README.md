@@ -72,6 +72,34 @@ Response Error: After retry create user
     "message": "this e-mail juan@rodriguez.org is already exist on dataBase"
 }
 ```
+Response Error: If name is empty or null
+```
+{
+    "code": 1002,
+    "message": "name can´t be null or empty"
+}
+```
+Response Error: If email is empty or null
+```
+{
+    "code": 1002,
+    "message": "email can´t be null or empty"
+}
+```
+Response Error: If password is empty or null
+```
+{
+    "code": 1002,
+    "message": "password can´t be null or empty"
+}
+```
+Response Error: If array phones is empty or null
+```
+{
+    "code": 1002,
+    "message": "phones can´t be null or empty"
+}
+```
 
 
 # Deploy
