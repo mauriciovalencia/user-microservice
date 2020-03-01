@@ -87,6 +87,7 @@ docker-compose up -d --build --force-recreate
 
 # Architecture or diagram
 
+![alt text](https://www.lucidchart.com/publicSegments/view/1b3ffc21-edea-4853-92a9-8e66130e100d/image.png)
 
 # License
 License under the terms of the GNU GPLv3 License
